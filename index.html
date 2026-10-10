@@ -165,6 +165,34 @@
       runAway();
     }, { passive: false });
     no.addEventListener("click", runAway);
+    
+const achievements = [
+  "🏆 All-Russian Programming Olympiad Winner",
+  "🎓 Computer Science Student at OVGU",
+  "👩‍🏫 Former Teaching Assistant at AUBG",
+  "💻 Python · Java · C++ · SQL",
+  "🧠 Data Mining & Recommender Systems",
+  "✨ Your Future Data & Innovation Intern"
+];
+
+let achievementIndex = 0;
+const achievementText =
+  document.getElementById("achievement-text");
+
+setInterval(() => {
+  achievementText.classList.add("changing");
+
+  setTimeout(() => {
+    achievementIndex =
+      (achievementIndex + 1) % achievements.length;
+
+    achievementText.textContent =
+      achievements[achievementIndex];
+
+    achievementText.classList.remove("changing");
+  }, 250);
+}, 2200);
+
   </script>
 </body>
 </html>
