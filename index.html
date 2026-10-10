@@ -1,90 +1,365 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5eaff">
+  <meta name="theme-color" content="#0018A8">
   <meta name="description" content="Nataliia Evseeva — your next Technology, Data & Innovation intern.">
   <title>Hire Nataliia Evseeva</title>
+
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
       overflow-x: hidden;
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #f5eaff 0%, #fff8f4 100%);
-      color: #171a3b;
+      background: linear-gradient(
+        135deg,
+        #eaf2ff 0%,
+        #ffffff 55%,
+        #f3f7ff 100%
+      );
+      color: #071d49;
       text-align: center;
     }
-    main { width: min(100%, 980px); margin: 0 auto; padding: clamp(48px, 8vw, 100px) 20px 65px; }
-    h1 { font-size: clamp(38px, 7vw, 72px); letter-spacing: -2px; margin: 0 0 16px; }
-    .tagline { color: #77718c; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; font-weight: bold; }
-    .headline { font-size: clamp(21px, 3.3vw, 30px); margin: 28px 0 0; }
-    .achievement-container { margin: 32px auto 0; }
-    .achievement-label { font-size: 12px; font-weight: bold; letter-spacing: 3px; color: #8265df; }
+
+    main {
+      width: min(100%, 980px);
+      margin: 0 auto;
+      padding: clamp(48px, 8vw, 100px) 20px 65px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 72px);
+      letter-spacing: -2px;
+      margin: 0 0 16px;
+      color: #0018a8;
+    }
+
+    .headline {
+      font-size: clamp(21px, 3.3vw, 30px);
+      margin: 28px 0 0;
+      color: #071d49;
+    }
+
+    /* ACHIEVEMENTS ROULETTE */
+
+    .achievement-container {
+      margin: 32px auto 0;
+    }
+
+    .achievement-label {
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #0018a8;
+    }
+
     .achievement-window {
-      margin: 14px auto 0; width: min(100%, 650px); min-height: 82px;
-      display: flex; align-items: center; justify-content: center;
-      padding: 16px 24px; border-radius: 20px;
-      background: rgba(255,255,255,.65);
-      border: 1px solid rgba(255,255,255,.9);
-      box-shadow: 0 8px 30px rgba(139,112,239,.12);
+      margin: 14px auto 0;
+      width: min(100%, 650px);
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #d8e5f7;
+      box-shadow: 0 8px 30px rgba(0, 24, 168, 0.09);
       overflow: hidden;
     }
-    #achievement-text { font-size: clamp(16px, 2.5vw, 22px); font-weight: bold; transition: opacity .25s, transform .25s; }
-    #achievement-text.changing { opacity: 0; transform: translateY(-16px); }
-    .buttons { margin: 38px auto 0; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 18px; min-height: 100px; }
-    button { font: inherit; cursor: pointer; border-radius: 18px; border: 0; padding: 20px 24px; font-size: 16px; font-weight: bold; }
-    button:focus-visible { outline: 3px solid #4036a8; outline-offset: 4px; }
-    #hire { background: #8b70ef; color: white; box-shadow: 0 10px 25px #8b70ef55; transition: transform .2s, background .2s; }
-    #hire:hover { background: #7355df; transform: translateY(-3px); }
-    #hire small { display: block; font-size: 12px; font-weight: normal; margin-top: 5px; line-height: 1.4; }
-    #nohire { background: #ffe1e9; color: #ad3655; border: 2px solid #f3a1b8; transition: left .16s ease, top .16s ease; }
-    .rejection-counter { margin: 12px auto 0; min-height: 52px; font-size: 14px; font-weight: bold; color: #ad3655; line-height: 1.6; }
-    #rejection-count { color: #8b70ef; font-size: 19px; }
-    #rejection-message { color: #77718c; font-size: 13px; font-style: italic; }
-    .meme-section { margin: 58px auto 0; width: min(100%, 440px); }
-    .meme-card { background: rgba(255,255,255,.85); padding: 12px; border: 1px solid #ffffff; border-radius: 24px; box-shadow: 0 16px 40px rgba(139,112,239,.16); transition: transform .3s ease; }
-    .meme-card:hover { transform: translateY(-5px) rotate(1deg); }
-    .meme-card img { display: block; width: 100%; height: auto; max-height: none; object-fit: contain; border-radius: 12px; }
-    .meme-caption { margin: 18px 0 0; color: #77718c; font-size: 15px; font-style: italic; }
-    .success-message { position: fixed; left: 50%; top: 13%; transform: translateX(-50%); z-index: 9998; width: max-content; max-width: 90vw; padding: 20px 30px; border-radius: 20px; background: white; color: #7355df; font-size: clamp(18px, 4vw, 26px); font-weight: bold; box-shadow: 0 15px 50px #8b70ef55; animation: successPop .35s ease both; pointer-events: none; }
-    .confetti { position: fixed; top: -24px; width: 10px; height: 15px; z-index: 9999; pointer-events: none; animation: confettiFall 3s linear forwards; }
-    @keyframes confettiFall { to { transform: translateY(115vh) rotate(720deg); opacity: 0; } }
-    @keyframes successPop { from { opacity: 0; transform: translateX(-50%) scale(.7); } to { opacity: 1; transform: translateX(-50%) scale(1); } }
-    @media (max-width: 600px) { main { padding-top: 55px; } .buttons { flex-direction: column; } #hire, #nohire { width: min(100%, 350px); } .meme-section { margin-top: 42px; } h1 { letter-spacing: -1px; } }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+    #achievement-text {
+      font-size: clamp(16px, 2.5vw, 22px);
+      font-weight: bold;
+      color: #071d49;
+      transition: opacity .25s, transform .25s;
+    }
+
+    #achievement-text.changing {
+      opacity: 0;
+      transform: translateY(-16px);
+    }
+
+    /* BUTTONS */
+
+    .buttons {
+      margin: 38px auto 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      min-height: 100px;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+      border-radius: 18px;
+      border: 0;
+      padding: 20px 24px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    button:focus-visible {
+      outline: 3px solid #448aff;
+      outline-offset: 4px;
+    }
+
+    #hire {
+      background: #0018a8;
+      color: white;
+      box-shadow: 0 10px 25px rgba(0, 24, 168, 0.25);
+      transition: transform .2s, background .2s;
+    }
+
+    #hire:hover {
+      background: #003bce;
+      transform: translateY(-3px);
+    }
+
+    #hire small {
+      display: block;
+      font-size: 12px;
+      font-weight: normal;
+      margin-top: 5px;
+      line-height: 1.4;
+    }
+
+    #nohire {
+      background: #f0f5ff;
+      color: #0018a8;
+      border: 2px solid #a8c3f6;
+      transition: left .16s ease, top .16s ease;
+    }
+
+    /* REJECTION COUNTER */
+
+    .rejection-counter {
+      margin: 12px auto 0;
+      min-height: 52px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #0018a8;
+      line-height: 1.6;
+    }
+
+    #rejection-count {
+      color: #003bce;
+      font-size: 19px;
+    }
+
+    #rejection-message {
+      color: #526581;
+      font-size: 13px;
+      font-style: italic;
+    }
+
+    /* MEME */
+
+    .meme-section {
+      margin: 58px auto 0;
+      width: min(100%, 440px);
+    }
+
+    .meme-card {
+      background: #ffffff;
+      padding: 12px;
+      border: 1px solid #d8e5f7;
+      border-radius: 24px;
+      box-shadow: 0 16px 40px rgba(0, 24, 168, 0.12);
+      transition: transform .3s ease;
+    }
+
+    .meme-card:hover {
+      transform: translateY(-5px) rotate(1deg);
+    }
+
+    .meme-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .meme-caption {
+      margin: 18px 0 0;
+      color: #526581;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    /* SUCCESS MESSAGE */
+
+    .success-message {
+      position: fixed;
+      left: 50%;
+      top: 13%;
+      transform: translateX(-50%);
+      z-index: 9998;
+      width: max-content;
+      max-width: 90vw;
+      padding: 20px 30px;
+      border-radius: 20px;
+      background: white;
+      color: #0018a8;
+      font-size: clamp(18px, 4vw, 26px);
+      font-weight: bold;
+      box-shadow: 0 15px 50px rgba(0, 24, 168, 0.25);
+      animation: successPop .35s ease both;
+      pointer-events: none;
+    }
+
+    /* CONFETTI */
+
+    .confetti {
+      position: fixed;
+      top: -24px;
+      width: 10px;
+      height: 15px;
+      z-index: 9999;
+      pointer-events: none;
+      animation: confettiFall 3s linear forwards;
+    }
+
+    @keyframes confettiFall {
+      to {
+        transform: translateY(115vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes successPop {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) scale(.7);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+      main {
+        padding-top: 55px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      #hire,
+      #nohire {
+        width: min(100%, 350px);
+      }
+
+      .meme-section {
+        margin-top: 42px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
   </style>
 </head>
+
 <body>
   <main>
+
     <h1>Nataliia Evseeva</h1>
+
+    <!-- ACHIEVEMENTS -->
 
     <section class="achievement-container" aria-label="My strengths">
       <span class="achievement-label">WHY HIRE ME?</span>
-      <div class="achievement-window"><div id="achievement-text">🏆 All-Russian Programming Olympiad Winner</div></div>
+
+      <div class="achievement-window">
+        <div id="achievement-text">
+          All-Russian Programming Olympiad Winner
+        </div>
+      </div>
     </section>
 
-    <h2 class="headline">The easiest hiring decision you'll ever make.</h2>
+    <h2 class="headline">
+      The easiest hiring decision you'll ever make.
+    </h2>
+
+    <!-- BUTTONS -->
 
     <div class="buttons">
-      <button id="hire" type="button">Take Nataliia Evseeva<small>(the best candidate for Data Tech and Innovation Internship)</small></button>
-      <button id="nohire" type="button">Do not hire Nataliia Evseeva 🏃</button>
-    </div>
-    <div class="rejection-counter" aria-live="polite">
-      <span id="rejection-count">0</span> rejection attempts.<br>
-      <span id="rejection-message">Success rate: 0% 💅</span>
+
+      <button id="hire" type="button">
+        Take Nataliia Evseeva
+        <small>
+          (the best candidate for Data Tech and Innovation Internship)
+        </small>
+      </button>
+
+      <button id="nohire" type="button">
+        Do not hire Nataliia Evseeva 🏃
+      </button>
+
     </div>
 
+    <!-- REJECTION COUNTER -->
+
+    <div class="rejection-counter" aria-live="polite">
+      <span id="rejection-count">0</span> rejection attempts.
+      <br>
+      <span id="rejection-message">Success rate: 0%</span>
+    </div>
+
+    <!-- MEME -->
+
     <section class="meme-section" aria-label="Internship meme">
-      <div class="meme-card"><img src="meme1.png" alt="Sad cat without a Deutsche Bank internship and happy cat with one"></div>
-      <p class="meme-caption">Choose wisely, Deutsche Bank. 💌</p>
+
+      <div class="meme-card">
+        <img
+          src="meme1.png"
+          alt="Sad cat without a Deutsche Bank internship and happy cat with one"
+        >
+      </div>
+
+      <p class="meme-caption">
+        Choose wisely, Deutsche Bank. 💌
+      </p>
+
     </section>
+
   </main>
 
   <script>
+
+    /* ACHIEVEMENTS ROULETTE */
+
     const achievements = [
       "All-Russian Programming Olympiad Winner",
       "Computer Science Student at OVGU",
@@ -93,22 +368,39 @@
       "Data Mining & Recommender Systems proficient (along with a lot more things).",
       "Your Future Data & Innovation Intern"
     ];
-    const achievementText = document.getElementById("achievement-text");
+
+    const achievementText =
+      document.getElementById("achievement-text");
+
     let achievementIndex = 0;
+
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setInterval(() => {
         achievementText.classList.add("changing");
+
         setTimeout(() => {
-          achievementIndex = (achievementIndex + 1) % achievements.length;
-          achievementText.textContent = achievements[achievementIndex];
+          achievementIndex =
+            (achievementIndex + 1) % achievements.length;
+
+          achievementText.textContent =
+            achievements[achievementIndex];
+
           achievementText.classList.remove("changing");
         }, 250);
+
       }, 2500);
     }
 
+    /* RUNAWAY BUTTON */
+
     const no = document.getElementById("nohire");
-    const rejectionCount = document.getElementById("rejection-count");
-    const rejectionMessage = document.getElementById("rejection-message");
+
+    const rejectionCount =
+      document.getElementById("rejection-count");
+
+    const rejectionMessage =
+      document.getElementById("rejection-message");
+
     const messages = [
       "Nice try, recruiter",
       "Rejection is not an option",
@@ -116,64 +408,123 @@
       "Deutsche Bank, we need to talk 💌",
       "please........"
     ];
+
     let rejectionAttempts = 0;
     let lastEscape = 0;
 
     function runAway() {
-      // Prevent one touch from counting several times.
       if (Date.now() - lastEscape < 350) return;
+
       lastEscape = Date.now();
       rejectionAttempts++;
+
       rejectionCount.textContent = rejectionAttempts;
-      rejectionMessage.textContent = messages[Math.min(rejectionAttempts - 1, messages.length - 1)];
+
+      rejectionMessage.textContent =
+        messages[Math.min(rejectionAttempts - 1, messages.length - 1)];
 
       const rect = no.getBoundingClientRect();
       const margin = 12;
-      const maxX = Math.max(margin, window.innerWidth - rect.width - margin);
-      const maxY = Math.max(margin, window.innerHeight - rect.height - margin);
+
+      const maxX = Math.max(
+        margin,
+        window.innerWidth - rect.width - margin
+      );
+
+      const maxY = Math.max(
+        margin,
+        window.innerHeight - rect.height - margin
+      );
+
       const x = margin + Math.random() * (maxX - margin);
       const y = margin + Math.random() * (maxY - margin);
+
       no.style.position = "fixed";
       no.style.left = x + "px";
       no.style.top = y + "px";
       no.style.zIndex = "100";
     }
+
     no.addEventListener("mouseenter", runAway);
-    no.addEventListener("touchstart", e => { e.preventDefault(); runAway(); }, { passive: false });
+
+    no.addEventListener("touchstart", e => {
+      e.preventDefault();
+      runAway();
+    }, { passive: false });
+
     no.addEventListener("click", runAway);
     no.addEventListener("focus", runAway);
 
+    /* CELEBRATION */
+
     function celebrate() {
       const old = document.querySelector(".success-message");
+
       if (old) old.remove();
+
       const message = document.createElement("div");
       message.className = "success-message";
       message.textContent = "🎉 Excellent decision! 🎉";
+
       document.body.appendChild(message);
+
       setTimeout(() => message.remove(), 3200);
-      const colors = ["#8b70ef", "#ff9ac2", "#ffd166", "#9be7c4", "#ffffff", "#b8a5ff"];
+
+      const colors = [
+        "#0018a8",
+        "#003bce",
+        "#0a4fe8",
+        "#73b9ff",
+        "#d6eaff",
+        "#ffffff"
+      ];
+
       for (let i = 0; i < 120; i++) {
         const piece = document.createElement("span");
+
         piece.className = "confetti";
+
         piece.style.left = Math.random() * 100 + "vw";
-        piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        piece.style.animationDelay = Math.random() * .7 + "s";
-        piece.style.animationDuration = (2 + Math.random() * 2) + "s";
+
+        piece.style.backgroundColor =
+          colors[Math.floor(Math.random() * colors.length)];
+
+        piece.style.animationDelay =
+          Math.random() * .7 + "s";
+
+        piece.style.animationDuration =
+          (2 + Math.random() * 2) + "s";
+
         document.body.appendChild(piece);
+
         setTimeout(() => piece.remove(), 4800);
       }
     }
 
+    /* HIRE BUTTON */
+
     document.getElementById("hire").addEventListener("click", () => {
+
       celebrate();
+
       const email = "nevseevadm@gmail.com";
-      const subject = "Deutsche Bank Technology, Data & Innovation Internship";
-      const body = "Dear Nataliia,\n\nWe would love to discuss your internship application!";
-      const url = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(email)
-        + "&su=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-      // Open on the actual click to avoid browser popup blocking.
+
+      const subject =
+        "Deutsche Bank Technology, Data & Innovation Internship";
+
+      const body =
+        "Dear Nataliia,\n\nWe would love to discuss your internship application!";
+
+      const url =
+        "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+        encodeURIComponent(email) +
+        "&su=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
       window.open(url, "_blank", "noopener,noreferrer");
+
     });
+
   </script>
 </body>
 </html>
