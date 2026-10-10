@@ -59,6 +59,45 @@
       border: 2px solid #f3a1b8;
       transition: left .15s, top .15s;
     }
+    
+.achievement-container {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.achievement-label {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #8b70ef;
+}
+
+.achievement-window {
+  margin: 16px auto;
+  max-width: 650px;
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.55);
+  box-shadow: 0 8px 30px rgba(139,112,239,0.12);
+  overflow: hidden;
+}
+
+#achievement-text {
+  font-size: clamp(16px, 2.5vw, 23px);
+  font-weight: bold;
+  color: #171a3b;
+  transition: opacity .25s, transform .25s;
+}
+
+#achievement-text.changing {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
   </style>
 </head>
 <body>
